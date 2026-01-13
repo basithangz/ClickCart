@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - ClickCart</title>
+    <meta
+      name="description"
+      content="Get in touch with ClickCart. We'd love to hear your questions, suggestions, or product recommendations."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="nav">
+        <div class="brand">
+          <a href="index.html">
+            <img src="/logo.JPG" class="brand-icon" alt="ClickCart Logo" />
+          </a>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html#products" class="nav-link">Browse</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn-theme" id="toggleDark" title="Toggle dark mode">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section id="contact" class="info-section contact-section">
+      <div class="info-container">
+        <h2>Get in Touch</h2>
+        <p>Have questions, suggestions, or product recommendations? We'd love to hear from you!</p>
+        <div class="contact-info">
+          <p>
+            📧 Email:
+            <a href="mailto:clickcartstoreofficial@gmail.com" class="contact-link">clickcartstoreofficial@gmail.com</a>
+          </p>
+          <p>
+            🔗 Follow us on
+            <a href="#" class="contact-link">Twitter</a>,
+            <a href="https://www.instagram.com/clikcart.in?igsh=YmVjbWYxNHQ3OGFi&utm_source=qr" class="contact-link">Instagram</a>
+          </p>
+          <p>
+            📋 Read our
+            <a href="#" class="contact-link">Privacy Policy</a> &
+            <a href="#" class="contact-link">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2026 Click•Cart. All rights reserved. Affiliate marketing platform for Amazon
+          India.
+        </p>
+        <p class="footer-note">
+          We are participants in the Amazon Services LLC Associates Program. This means we earn
+          commissions on qualifying purchases.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Dark mode toggle
+      const toggleDarkBtn = document.getElementById("toggleDark");
+      
+      function updateThemeIcon() {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        toggleDarkBtn.querySelector(".theme-icon").textContent = isDark ? "☀️" : "🌙";
+      }
+      
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      updateThemeIcon();
+      
+      toggleDarkBtn.addEventListener("click", () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+        updateThemeIcon();
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>

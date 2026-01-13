@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ClickCart - Curated Amazon Deals & Affiliate Links</title>
+    <meta
+      name="description"
+      content="Discover curated Amazon deals with fast search, advanced filters, and trustworthy affiliate links for tech, gadgets, and more."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="nav">
+        <div class="brand">
+          <img src="logo.png" class="brand-icon" alt="logo" />
+          <!-- <span class="brand-text">Click<span class="dot">•</span>Cart</span> -->
+        </div>
+        <nav class="nav-links">
+          <a href="#products" class="nav-link">Browse</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn-theme" id="toggleDark" title="Toggle dark mode">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Disclosure -->
+    <div class="disclosure">
+      <strong>⚠️ Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualifying
+      purchases. Product availability and prices may change at any time. All product links are
+      affiliate links.
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+      <div class="grid">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+          <h3 class="section-title">🔍 Filters</h3>
+
+          <!-- Category Filter -->
+          <div class="filter-group">
+            <h4 class="filter-label">Category</h4>
+            <div class="chip-row" id="categories"></div>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="filter-group">
+            <h4 class="filter-label">Price Range (₹)</h4>
+            <div class="range">
+              <input type="number" id="minPrice" placeholder="Min" min="0" class="range-input" />
+              <input type="number" id="maxPrice" placeholder="Max" min="0" class="range-input" />
+            </div>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="filter-group">
+            <h4 class="filter-label">Rating</h4>
+            <div class="rating-filter" id="ratingFilter">
+              <button data-rating="0" class="rating-btn active">All ★</button>
+              <button data-rating="4" class="rating-btn">4★ & up</button>
+              <button data-rating="3" class="rating-btn">3★ & up</button>
+              <button data-rating="2" class="rating-btn">2★ & up</button>
+            </div>
+          </div>
+
+          <!-- Clear Filters -->
+          <div class="filter-group">
+            <button class="btn btn-secondary" id="clearFilters">↺ Clear Filters</button>
+          </div>
+        </aside>
+
+        <!-- Products Section -->
+        <section>
+          <!-- Top Bar -->
+          <div class="topbar">
+            <div class="search-box">
+              <span class="search-icon">🔎</span>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Search products, brands..."
+                class="search-input"
+              />
+            </div>
+            <div class="sort-box">
+              <label for="sortSelect">Sort:</label>
+              <select id="sortSelect" class="select">
+                <option value="relevance">Relevance</option>
+                <option value="priceAsc">Price: Low to High</option>
+                <option value="priceDesc">Price: High to Low</option>
+                <option value="ratingDesc">Rating: Highest</option>
+              </select>
+            </div>
+            <div class="results-count" id="resultsCount">Loading...</div>
+          </div>
+
+          <!-- Products Grid -->
+          <div id="cards" class="cards"></div>
+        </section>
+      </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2026 Click•Cart. All rights reserved. Affiliate marketing platform for Amazon
+          India.
+        </p>
+        <p class="footer-note">
+          We are participants in the Amazon Services LLC Associates Program. This means we earn
+          commissions on qualifying purchases.
+        </p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
